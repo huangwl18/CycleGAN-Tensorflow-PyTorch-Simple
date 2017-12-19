@@ -1,50 +1,10 @@
-# CycleGAN
-***New: We also add a simple PyTorch implementation, see the "pytorch" folder***
+# CycleGAN-Adding-Snow-AND-Stylizing-Cars-With-Interesting-Paints
+This repository is originally from https://github.com/LynnHo/CycleGAN-Tensorflow-PyTorch-Simple and modified to fit the datasets we collected.
 
-Tensorflow implementation of CycleGAN, mostly modified from https://github.com/XHUJOY/CycleGAN-tensorflow to a simpler version
+It contains two datasets, regular2snow and cars2race_cars.
 
-Paper: [Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networkssee](https://arxiv.org/pdf/1703.10593.pdf) 
-Author: [Jun-Yan Zhu ](https://people.eecs.berkeley.edu/~junyanz/) *et al.*
+In regular2snow, the goal is to learn a mapping from regular images without snow to images with snow.
 
-## Exemplar results on testset
-- gif: horse -> zebra
-![](./pics/horse2zebra.gif)
-- row 1: horse -> zebra -> reconstructed horse, row 2: zebra -> horse -> reconstructed zebra
-![](./pics/example_horse2zebra_1.jpg)
-- row 1: apple -> orange -> reconstructed apple, row 2: orange -> apple -> reconstructed orange
-![](./pics/example_apple2orange_1.jpg)
+In cars2race_cars, the goal is to learn a mapping from images of regular cars to images of race cars.
 
-# Prerequisites
-- tensorflow r1.0
-- python 2.7
-
-# Usage
-```
-cd CycleGAN-Tensorflow-PyTorch-Simple-master
-```
-
-## Download Datasets
-- Download the horse2zebra dataset:
-```bash
-sh ./download_dataset.sh horse2zebra
-```
-- Download the apple2orange dataset:
-```bash
-sh ./download_dataset.sh apple2orange
-```
-- See download_dataset.sh for more datasets
-
-## Train Example
-```bash
-python train.py --dataset=horse2zebra --gpu_id=0
-```
-
-## Test Example
-```bash
-python test.py --dataset=horse2zebra
-```
-
-## Gif2Gif
-```bash
-python gif2gif.py --gif=./pics/horse.gif --save_path=./pics/horse2zebra.gif --dataset=horse2zebra --direction=a2b
-```
+See generated_image_samples for trained results! There is still room for improvement. Will keep working on this!
